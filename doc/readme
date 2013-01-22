@@ -1,0 +1,32 @@
+The Biot equations as they appear in Eqs. 10.30-32 and 10.36 of \cite{sumer2002mechanics} read
+\begin{align}
+	G\Delta \vec D +\frac{G}{1-2\nu}\nabla\epsilon & = \nabla p\\
+	\frac{n}{K'}\frac{\partial p}{\partial t} + \frac{\partial \epsilon}{\partial t} & = \frac{k}{\gamma}\Delta p
+\end{align}
+In 3D these are four partial differential equations for the (three components of the) \emph{soil skeleton displacement vector} $\vec D$, and the \emph{excess pore water pressure} $p$. The quantity $\epsilon$ is the \emph{dilation} defined by $\epsilon \equiv \nabla\cdot\vec D$. The remaining quantities in the equations are constants:
+\begin{center}
+    \begin{tabular}{ | l | l | l |}\hline
+    Symbol 		& Description 					& Typical value in SI units\\ \hline
+	$G$			& Soil skeleton shear modulus	& 3.876e6 [Pa]\\ \hline
+	$\nu$		& Soil Poisson ratio			& 0.29 [-] \\ \hline
+	$n$			& Soil porosity					& 0.4 [-] \\ \hline
+	$K'$		& Apparent pore water bulk modulus			& 1e6 [Pa] (see below) \\ \hline
+	$k$			& Soil permeability				& 1e-3 [m/s] \\ \hline
+	$\gamma$	& Specific weight of water ($\rho_w g$)	& 10104 [kg/m$^2$/s$^2$]\\ \hline
+    \end{tabular}
+\end{center}
+
+The apparent bulk modulus of pore water $K'$ is introduced to account for the fact that it may contain small amounts of air or gas bubbles, which significantly alters ''effective`` bulk modulus of the water/air mixture. According to Eqn. 10.35 in \cite{sumer2002mechanics} the apparent bulk modulus may be calculated 
+\begin{align}
+	\frac1{K'} = \frac1K + \frac{1-S_r}{p_0}.
+\end{align}
+Here we need the following quantities:
+\begin{center}
+    \begin{tabular}{ | l | l | l |}\hline
+    Symbol 		& Description 					& Typical value in SI units\\ \hline
+	$K$			& Water bulk modulus			& 2e9 [Pa]\\ \hline
+	$S_r$		& Soil saturation degree			& 0.99 [-] \\ \hline
+	$p_0$		& Initial absolute pore pressure & 1e4 [Pa] \\ \hline
+    \end{tabular}
+\end{center}
+All these parameters are set in the <case>/constant/materialProperties dictionary.
