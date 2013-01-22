@@ -1,0 +1,4 @@
+tractionDisplacement/tractionDisplacementFvPatchVectorField.C
+propagatingPressureWave/propagatingPressureWaveFvPatchScalarField.C
+
+LIB = $(FOAM_USER_LIBBIN)/libSoilFvPatchFields
